@@ -14,8 +14,8 @@ public class AuthUser extends User {
     private String fullName;
     private Long userId;
 
-    public AuthUser(Usuario usuario) {
-        super(usuario.getEmail(), usuario.getSenha(), Collections.emptyList());
+    public AuthUser(Usuario usuario, Collection<? extends GrantedAuthority> authorities) {
+        super(usuario.getEmail(), usuario.getSenha(), authorities);
 
         this.userId = usuario.getId();
         this.fullName = usuario.getNome();
